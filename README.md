@@ -16,7 +16,7 @@ Check https://cs50.harvard.edu/web/2020/projects/1/wiki/
     pip install django
     ````
     ````
-    pip3 install markdown2
+    pip install markdown2
     ````
     ````
     pip install django-markdownify
