@@ -1,0 +1,32 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h3 class="mt-4 pb-2 border-bottom">Edit Page</h3>
+    <h6 class="mt-4 m-2"><span>Title:</span> {{ title }}</h6>
+
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <div class="form-group m-2">
+                <!-- hidden input for title -->
+                <div style="display: none;">
+                    {{ form.title }}
+                </div>
+
+                <div>
+                    Content: {{ form.content }}
+                </div>
+
+                <div class="text-left mt-2">
+                    <button class="btn btn-success shadow-sm rounded" type="submit">Save changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

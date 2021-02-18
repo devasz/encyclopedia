@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+<!-- Django Markdownify https://pypi.org/project/django-markdownify/ -->
+<!-- Load the tag in template -->
+{% load markdownify %}
+{% block title %}
+    Encyclopedia - {{ title }}
+{% endblock %}
+
+{% block body %}
+    <h3 class="mt-4 pb-2 border-bottom">{{ title }}
+        <span class="h5">[<a href="{% url 'encyclopedia:edit' title %}">Edit page</a>]</span>
+    </h3>
+
+    <div class="m-2">
+        <!-- Change MARKDOWN to HTML -->
+        {{ content | markdownify }}
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h3 class="mt-4 pb-2 border-bottom">Error Page</h3>
+
+    <div class="m-2">
+        <ul class="messages nav flex-column">
+            <li class="alert alert-danger shadow-sm rounded">
+                {{ error }}
+            </li>
+        </ul>
+    </div>
+{% endblock %}

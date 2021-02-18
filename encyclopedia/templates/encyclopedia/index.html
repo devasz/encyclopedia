@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h3 class="mt-4 pb-2 border-bottom">All Pages</h3>
+
+    <div class="form-group m-3">
+        <div class="mt-1">
+            <div>
+                <ul class="nav flex-column mb-1">
+                    {% for entry in entries %}
+                        <li class="my-1">
+                            <a href="wiki/{{ entry }}" title="Go to {{ entry }} page">{{ entry }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

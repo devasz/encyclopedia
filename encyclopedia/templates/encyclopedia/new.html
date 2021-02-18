@@ -1,0 +1,66 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h3 class="mt-4 pb-2 border-bottom">New Page</h3>
+
+    {% if messages %}
+        <div class="m-2">
+            <ul class="messages nav flex-column">
+                {% for message in messages %}
+                    <li class="alert alert-danger shadow-sm rounded mb-0" {% if message.tags %}
+                        class="{{ message.tags }}"
+                    {% endif %}>
+                        {{ message }}
+                    </li>
+                {% endfor %}
+        </div>
+    {% endif %}
+
+    <div>
+        <form action="/new" method="POST">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <div class="form-group m-2">
+                {% if form.title.errors %}
+                    <ul class=" nav flex-column">
+                        {% for error in form.title.errors %}
+                            <li class="text-danger font-weight-bolder mb-1" {% if error.tags %}
+                                class="{{ error|escape }}"
+                            {% endif %}>
+                                Title: {{ error }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <div class="mb-2">
+                    {{ form.title }}
+                </div>
+
+                {% if form.content.errors %}
+                    <ul class="nav flex-column">
+                        {% for error in form.content.errors %}
+                            <li class="text-danger font-weight-bolder mb-1" {% if error.tags %}
+                                class="{{ error|escape }}"
+                            {% endif %}>
+                                Content: {{ error }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <div class="mb-2">
+                    {{ form.content }}
+                </div>
+
+                <div class="text-left mt-2">
+                    <button type="submit" class="btn btn-success shadow-sm rounded">Save page</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}

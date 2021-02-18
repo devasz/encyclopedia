@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h3 class="mt-4 pb-2 border-bottom">Search Result Page</h3>
+
+    <div class="form-group m-3">
+        <div class="mt-1">
+            <div>
+                <ul class="nav flex-column mb-1">
+                    {% for result in results %}
+                        <li class="my-1">
+                            <a href="wiki/{{ result }}">{{ result }}</a>
+                        </li>
+                    {% empty %}
+                        <li>No result.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
