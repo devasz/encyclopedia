@@ -1,5 +1,6 @@
 # Encyclopedia
 #### Project 1 from Edx | Harvard CS50's Web Programming with Python and JavaScript Course
+Design a Wikipedia-like online encyclopedia.
 
 ## Specification 
 Check https://cs50.harvard.edu/web/2020/projects/1/wiki/
@@ -7,17 +8,20 @@ Check https://cs50.harvard.edu/web/2020/projects/1/wiki/
 
 ## Requirements to run the project
 
-* Install __python__ and __pip__
+* Install python and pip.
 
-* Run:
+* After pip was installed, run:
     
-    __pip install django__
-    
-    __pip install markdown2__
-    
-    __pip install django-markdownify__
-    
-
+    ````
+    pip install django
+    ````
+    ````
+    pip3 install markdown2
+    ````
+    ````
+    pip install django-markdownify
+    ````
 * In the root folder, execute: 
-    
-    __python manage.py runserver__
+    ````
+    python manage.py runserver
+    ````
