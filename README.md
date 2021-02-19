@@ -5,6 +5,8 @@ Design a Wikipedia-like online encyclopedia.
 ## Specification 
 Check https://cs50.harvard.edu/web/2020/projects/1/wiki/
 
+## Video
+YouTube https://youtu.be/sVDdQjUeHkg
 
 ## Requirements to run the project
 
